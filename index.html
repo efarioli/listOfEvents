@@ -58,11 +58,21 @@
 
     <div class="container">
 
-      <div class="starter-template">
+      <div class="starter-template" ng-controller='myController'>
 
-        <input type="text" placeholder="enter your name" ng-model="myName">
-        <h1>Hello, <span ng-bind="myName"></span></h1>
+        <div class="input-group">
+          <label for="firstName">First Name
+            <input type="text" name="name" ng-model="firstName">
 
+          </label>
+        </div>
+        <div class="input-group">
+          <label for="lastName">Last Name
+            <input type="text" name="name" ng-model="lastName">
+
+          </label>
+        </div>
+        <h1>Hello, {{printName()}} </h1>
       </div>
 
     </div><!-- /.container -->
@@ -82,6 +92,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
 
     <script src='app.js'></script>
+    <script src='controller.js'></script>
   </body>
 
 </html>

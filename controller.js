@@ -1,14 +1,4 @@
-angular.module('myFirstApp', [])
-.factory('personService', function(){
-
-  var person = {};
-
-  person.printName = function (firstName, lastName) {
-    return firstName + ' ' + lastName;
-  }
-  return person;
-})
-
+angular.module('myFirstApp')
 .controller('myController', function ($scope, personService) {
   $scope.firstName = 'Trainee';
   $scope.lastName = 'Farioli';
@@ -17,6 +7,5 @@ angular.module('myFirstApp', [])
     return personService.printName($scope.firstName, $scope.lastName);
 
   };
-
 
 });
