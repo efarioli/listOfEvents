@@ -8,4 +8,13 @@ angular.module('myFirstApp')
 
   };
 
-});
+
+})
+.controller('AboutCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+	$scope.input = $routeParams.parm1;
+
+}])
+.controller('ContactCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+	$scope.input = $routeParams.parm1;
+	
+}]);

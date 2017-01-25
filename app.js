@@ -1,8 +1,14 @@
 angular.module('myFirstApp', ['ngRoute'])
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider
-  .when('/about', {templateUrl: 'views/about.html'})
-  .when('/contact', {templateUrl: 'views/contact.html'} )
+  .when('/about/:parm1', {
+  	templateUrl: 'views/about.html',
+  	controller: 'AboutCtrl'
+  })
+  .when('/contact/:parm1', {
+  	templateUrl: 'views/contact.html',
+  	controller: 'ContactCtrl'
+  })
   .otherwise({redirectTo: '/'})
   $locationProvider.html5Mode(true);
 }])
