@@ -1,4 +1,10 @@
-angular.module('myFirstApp', [])
+angular.module('myFirstApp', ['ngRoute'])
+.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider
+  .when('/about', {templateUrl: 'views/about.html'})
+  .when('/contact', {templateUrl: 'views/contact.html'} )
+  .otherwise({redirectTo: '/'})
+}])
 .factory('personService', function(){
 
   var person = {};
@@ -8,15 +14,3 @@ angular.module('myFirstApp', [])
   }
   return person;
 })
-
-.controller('myController', function ($scope, personService) {
-  $scope.firstName = 'Trainee';
-  $scope.lastName = 'Farioli';
-
-  $scope.printName = function () {
-    return personService.printName($scope.firstName, $scope.lastName);
-
-  };
-
-
-});
